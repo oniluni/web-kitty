@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+:root {
+	--pastel-blue: #7dbaff;
+	--pastel-blue-dark: #3c63b8;
+	--almost-black: #0d0d0d;
+	--dark-bg: #121212;
+	--dark-elements: #1e1e1e;
+	--pure-white: #ffffff;
+	--off-white: #e0e0e0;
+	--gray-light: #2a2a2a;
+
+	--font-main: "Inter", -apple-system, system-ui, sans-serif;
+	--font-heading: "Montserrat", sans-serif;
+}
+
+.text-glow-off {
+	color: #121212;
+}
+@layer utilities {
+	.text-glow-on {
+		animation: glowPulse 4s ease-in-out infinite alternate;
+	}
+	.text-glow-off {
+		text-shadow: none;
+		transition: text-shadow 0.5s ease-in-out;
+	}
+
+	@keyframes animationEntrance {
+		0% {
+			text-shadow:
+				0 0 30px theme("colors.gray.300"),
+				0 0 60px theme("colors.gray.200");
+		}
+		100% {
+			text-shadow:
+				0 0 20px theme("colors.gray.200"),
+				0 0 40px theme("colors.gray.100");
+		}
+	}
+
+	@keyframes glowPulse {
+		0% {
+			text-shadow:
+				0 0 20px rgba(255, 255, 255, 0.5),
+				0 0 40px rgba(255, 255, 255, 0.3);
+		}
+		100% {
+			text-shadow:
+				0 0 30px rgba(255, 255, 255, 1),
+				0 0 60px rgba(255, 255, 255, 0.5);
+		}
+	}
+}
+
+@keyframes wiggle {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(5deg);
+	}
+	50% {
+		transform: rotate(-5deg);
+	}
+	75% {
+		transform: rotate(5deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+.wiggle {
+	animation: wiggle 0.5s ease-in-out infinite;
+}
+
+/* Базовые стили */
+html {
+	scroll-behavior: smooth;
+	font-size: 16px;
+}
+
+body {
+	font-family: var(--font-main);
+	line-height: 1.6;
+	color: var(--off-white);
+	background-color: var(--almost-black);
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+}
+
+/* Текстовая иерархия */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-heading);
+	color: var(--pure-white);
+	margin-top: 0;
+	font-weight: 600;
+}
+
+p {
+	margin-bottom: 1.5rem;
+	max-width: 65ch;
+	color: var(--off-white);
+}
+
+/* Ссылки */
+a {
+	text-decoration: none;
+	transition: all 0.3s ease;
+	position: relative;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+	html {
+		font-size: 14px;
+	}
+
+	.navbar {
+		padding: 1rem;
+	}
+}
