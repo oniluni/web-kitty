@@ -1,6 +1,3 @@
-   /\_/\  
-  ( o.o )  Welcome to the github page
-   > ^ <   React + Bun + Tailwind CSS
 
 # 🐾 web.kitty — Interactive Cat Terminal
 
@@ -28,4 +25,6 @@ and a lot more hidden commands 💻
 
 ---
 
-soon...
+   /\_/\  
+  ( o.o )  soon...
+   > ^ <
